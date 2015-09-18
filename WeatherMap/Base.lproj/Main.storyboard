@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="fS8-M1-Zt4">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--WeatherMap-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Dej-66-G86">
+                                <rect key="frame" x="16" y="64" width="568" height="492"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Xug-94-PfA"/>
+                                </connections>
+                            </mapView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ltg-nl-F2V">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <items>
+                                    <barButtonItem title="Local" id="osF-hQ-OwS">
+                                        <connections>
+                                            <action selector="localHandler:" destination="BYZ-38-t0r" id="Yja-IS-hTc"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem systemItem="flexibleSpace" id="Pgm-fG-vL6">
+                                        <connections>
+                                            <action selector="localHandler:" destination="BYZ-38-t0r" id="H35-39-O0k"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Get Weather" id="x8h-j3-drG">
+                                        <connections>
+                                            <action selector="getWeather:" destination="BYZ-38-t0r" id="sdL-OT-LGR"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Dej-66-G86" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="55K-ei-ZQk"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Dej-66-G86" secondAttribute="trailing" id="Aaw-10-BNR"/>
+                            <constraint firstItem="Dej-66-G86" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="64" id="Amr-Bi-vC7"/>
+                            <constraint firstItem="ltg-nl-F2V" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="Zd0-OF-kc1"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ltg-nl-F2V" secondAttribute="bottom" id="jH9-ry-MWt"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Dej-66-G86" secondAttribute="bottom" constant="44" id="s4L-Bz-XQs"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ltg-nl-F2V" secondAttribute="trailing" constant="-16" id="teF-rX-K0a"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="WeatherMap" id="Od7-DM-w2C"/>
+                    <connections>
+                        <outlet property="mapView" destination="Dej-66-G86" id="saR-2z-3uv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="760" y="-210"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="D6l-Ig-hBd">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fS8-M1-Zt4" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="xjm-rH-Fxb">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="TV8-Nw-AWa">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="r6b-sv-FVO"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HQg-3e-WaM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="57" y="-210"/>
+        </scene>
+    </scenes>
+</document>
